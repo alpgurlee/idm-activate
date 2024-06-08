@@ -2,16 +2,20 @@
 @setlocal DisableDelayedExpansion
 @echo off
 
+
+
 ::============================================================================
 ::
 ::   IDM Activation Script (IAS)
 ::
 ::   Homepages: https://github.com/lstprjct/IDM-Activation-Script
-::             
+::              https://t.me/ModByPiash/5
 ::
-::      alpgurlee
+::       Telegram: @Stripe_op
 ::
 ::============================================================================
+
+
 
 ::  To activate, run the script with "/act" parameter or change 0 to 1 in below line
 set _activate=0
@@ -541,7 +545,7 @@ echo Checking Info - [%regwinos% ^| %fullbuild% ^| %regarch% ^| IDM: %IDMver%]
 %idmcheck% && (echo: & taskkill /f /im idman.exe)
 
 set _time=
-for /f %%a in ('%psc% "(Get-Date).ToString('yyyyMMddHHmmssfff')"') do set _time=%%a
+for /f %%a in ('%psc% "(Get-Date).ToString('yyyyMMdd-HHmmssfff')"') do set _time=%%a
 
 echo:
 echo Creating backup of CLSID registry keys in %SystemRoot%\Temp
@@ -909,5 +913,3 @@ exit /b
 
 ::========================================================================================================================================
 :: Leave empty line below
-
-
