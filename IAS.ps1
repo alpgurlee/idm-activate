@@ -27,8 +27,6 @@ Start-Process $FilePath $ScriptArgs -Wait
 $FilePaths = @("$env:TEMP\IAS*.cmd", "$env:SystemRoot\Temp\IAS*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
 
+# Boş satır ekleyin (aşağıdaki gibi)
+# Boş satır ekleyin (aşağıdaki gibi)
 
-
-# Script içerikleri
-
-# Boş satır
