@@ -1,3 +1,5 @@
+# Check the instructions here on how to use it https://github.com/lstprjct/IDM-Activation-Script/wiki
+
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
@@ -17,12 +19,10 @@ catch {
 
 $ScriptArgs = "$args "
 $prefix = "@REM $rand `r`n"
-$content = $prefix + $response.Content
+$content = $prefix + $response
 Set-Content -Path $FilePath -Value $content
 
 Start-Process $FilePath $ScriptArgs -Wait
 
 $FilePaths = @("$env:TEMP\IAS*.cmd", "$env:SystemRoot\Temp\IAS*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
-
-# Boş satır ekleyin
